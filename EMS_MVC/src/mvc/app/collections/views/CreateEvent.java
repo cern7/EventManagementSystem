@@ -11,11 +11,12 @@ import java.util.Scanner;
 public class CreateEvent {
 
 	private Scanner input = new Scanner(System.in);
-	private String eventName, eventType, addressURL, description, startDateString, endDateString;
-	private int placeLimit, organiser;
+	protected String eventName, eventType, addressURL, description, startDateString, endDateString;
+	protected int placeLimit;
+	protected int organiser;
 
 	public CreateEvent() {
-		setEventdetails();
+		
 	}
 
 	public void setEventdetails() {

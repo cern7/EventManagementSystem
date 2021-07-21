@@ -20,9 +20,8 @@ public class EventModel {
 	// Class variables
 
 	public EventModel() {
-		
+
 	}
-	
 
 	/**
 	 * @param eventName
@@ -51,9 +50,11 @@ public class EventModel {
 	public int getEventID() {
 		return eventID;
 	}
+
 	public void setEventID(int eventID) {
 		this.eventID = eventID;
 	}
+
 	public String getEventName() {
 		return eventName;
 	}
@@ -118,12 +119,11 @@ public class EventModel {
 		this.placeLimit = placeLimit;
 	}
 
-
 	@Override
 	public String toString() {
-		return "EventModel [ID=" +eventID + ", eventName=" + eventName + ", eventType=" + eventType + ", addressURL=" + addressURL
-				+ ", description=" + description + ", startDateString=" + startDateString + ", endDateString="
-				+ endDateString + ", placeLimit=" + placeLimit + "]";
+		return "EventModel [ID=" + eventID + ", eventName=" + eventName + ", eventType=" + eventType + ", addressURL="
+				+ addressURL + ", description=" + description + ", startDateString=" + startDateString
+				+ ", endDateString=" + endDateString + ", placeLimit=" + placeLimit + "]";
 	}
 
 //	private void dateParse(String date) {

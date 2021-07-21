@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class NewEventLogic {
 	private DataBaseConnection db = new DataBaseConnection();
-	private Scanner input = new Scanner(System.in);
+	
 	private EventModel newEvent;
 
 	public NewEventLogic(String eventName, String eventType, String addressURL, String description, String startDate,

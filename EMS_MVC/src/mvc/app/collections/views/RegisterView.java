@@ -13,7 +13,7 @@ public class RegisterView {
 
 	private Scanner input = new Scanner(System.in);
 	private String username, firstName, lastName, email, password, passwordConfirm;
-	private RegisterController regControl;
+	
 
 	public RegisterView() {
 		
