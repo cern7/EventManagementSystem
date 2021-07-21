@@ -1,0 +1,10 @@
+=======================================================================
+API public class LoginController
+=======================================================================
+	public LoginController()	// class constructor that invokes LoginView() and LoginLogic()
+=======================================================================
+API public class RegisterController
+=======================================================================
+	public RegisterController()	// class constructor that invokes RegisterView() and RegisterLogic()
+=======================================================================
+

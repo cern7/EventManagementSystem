@@ -1,0 +1,53 @@
+================================================================
+API | public class UserModel
+================================================================
+	public UserModel()					// class constructor 
+	public String getFirstName()				// return the object first name
+        public void setFirstName(String firstName)		// set the object first name
+        public String getLastName()    				// return the object last name
+        public void setLastName(String lastName)       		// set the object last name
+        public String getEmail()        			// return the object email address
+        public void setEmail(String email)      		// set the object email address
+        public String getPassword()				// return the object password
+	public void setPassword()				// set the object password
+        public String getUsername()     			// get the object 'username'
+        public void setUsername(String username)        	// set the object 'username'
+        public byte[] getSalt1()       				// get the object 'salt1'
+        public void setSalt1()         				// set the object 'salt1'
+        public byte[] getSalt2()       				// get the object 'salt2'
+        public void setSalt2()          			// set the object 'salt2'
+        public String getHash1()        			// get the object 'hash1'
+        public void setHash1(byte[] salt, String password)	// set the object 'hash1'
+        public String getHash2()        			// get the object 'hash2'
+        public void setHash2(byte[] salt, String password)      // set the object 'hash2'
+=================================================================
+API public class RegisterLogic
+=================================================================
+	public RegisterLogic(String username, String password,
+			String passwordConfirm, String firstName, 
+			String lastName, String Email)		// class constructor that initializes the 
+								// UserModel() object and inserting the data 
+								// into the database
+================================================================
+API public class LoginLogic
+================================================================
+	public LoginLogic(String username, String password)	// class constructor 
+================================================================
+API public class DataBaseConnection
+================================================================
+	public classDataBaseConnection()			// class constructor
+	public Statement getSt()				// return the Statement class object
+	public ResultSet getRs()				// return the ResultSet class object
+	public ResultSetMetaData getMd()			// return the ResultSetMetaData class object
+	public Connection getCon()				// return the Connection class object
+	public PreparedStatement getPrst()			// return the PreparedStatement class object
+	public void setPrst(PreparedStatement prst)		// set the PreparedStatement object
+	public void setCon(Connection con)			// set the Connection object
+	public void setSt(Statement st)				// set the Statement object
+	public void setRs(ResultSet rs)				// set the ResultSet object
+	public void setMd(ResultSetMetaData md)			// set the ResultSetMetaData object
+	public static String getDatabaseurl()			// return the String DataBaseURL
+================================================================
+	
+
+

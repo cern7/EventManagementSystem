@@ -1,0 +1,27 @@
+=================================================================
+API public class RegisterView
+=================================================================
+	public RegisterView()					// class constructor
+	public void getUserInfor()				// process user input
+	public String getUsername()				// return the username
+	public void setUsername(String username)		// set the username
+	public String getFirstName()				// reutrn the first name
+	public void setFirstName(String firstName)		// set the first name
+	public String getLastName()				// return the last name
+	public void setLastName(String lastName)		// set the last name
+	public String getEmail()				// return the email
+	public void setEmail(String email)			// set the email
+	public String getPassword()				// return the password
+	public void setPassword(String password)		// set the password
+	public String getPasswordConfirm()			// return the password confirmation
+	public void setPasswordConfirm(String passwordConfirm)	// set the password confirmation
+================================================================
+API public class LoginView
+================================================================
+	public LoginView()					// class constructor
+	public String getUsername()                             // return the username
+	public void setUsername(String username)                // set the username
+	public String getPassword()                             // return the password
+	public void setPassword(String password)                // set the password
+================================================================
+

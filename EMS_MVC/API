@@ -1,0 +1,32 @@
+================================================================
+API | public class User
+================================================================
+	User()	// User constructor
+	User(String username)	//constructor for initializing variabels for data-types
+	public String getFirstName()	// return the object first name
+	public void setFirstName(String firstName)	set the object first name
+	public String getLastName()	// return the object last name
+	public void setLastName(String lastName)	// set the object last name
+	public String getEmail()	// return the object email address
+	public void setEmail(String email)	// set the object email address
+	public String getPassword 
+	public String getUsername()	// get the object 'username'
+	public void setUsername(String username)	//set the object 'username'
+	public byte[] getSalt1()	// get the object 'salt1'
+	public void setSalt1()		// set the object 'salt1'
+	public byte[] getSalt2()        // get the object 'salt2'
+        public void setSalt2()          // set the object 'salt2'
+	public String getHash1()	// get the object 'hash1'
+	public void setHash1(byte[] salt, String password)	// set the object 'hash1'
+	public String getHash2()        // get the object 'hash2'
+        public void setHash2(byte[] salt, String password)	// set the object 'hash2'
+=================================================================
+API | public class Login extends User
+=================================================================
+	Login()	// class constructor
+=================================================================
+API | public class Registration
+=================================================================
+	Registration()	//class constructor
+	public void setUserInfo()	//gets the user information from input
+=================================================================
