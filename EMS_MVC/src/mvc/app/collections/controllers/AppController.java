@@ -28,6 +28,8 @@ public class AppController {
 	private EventModel event;
 	private CancelEventNotice cancelNotice;
 	private CancelEvent delete;
+	private Ticket ticket;
+	private Bookings booking;
 
 	public AppController(int i) {
 		while (i != 11) {
@@ -97,9 +99,9 @@ public class AppController {
 				viewEvents = new ListEventsView(listEvents.userEvents(loginUser.getUserId()));
 				System.out.println("Please select the event ID to cancel: ");
 				int eventID = input.nextInt();
-				
+
 				cancelNotice = new CancelEventNotice();
-				if(cancelNotice.cancelWarning()) {
+				if (cancelNotice.cancelWarning()) {
 					delete = new CancelEvent(loginUser.getUserId(), eventID);
 				}
 				homePage = new HomePage();
@@ -108,6 +110,20 @@ public class AppController {
 			case 7:
 				listEvents = new ListEvents();
 				viewEvents = new ListEventsView(listEvents.allEvents());
+				homePage = new HomePage();
+				i = homePage.homePageView();
+				break;
+			case 8:
+				listEvents = new ListEvents();
+				viewEvents = new ListEventsView(listEvents.allEvents());
+				
+				System.out.println("Please select the event you would like to book\nEventID:");
+				int id = input.nextInt();
+				
+				ticket = new Ticket(loginUser, viewEvents.event(listEvents.allEvents(), id));
+				booking = new Bookings(ticket);
+				
+				
 				homePage = new HomePage();
 				i = homePage.homePageView();
 				break;
