@@ -12,8 +12,12 @@ import mvc.app.collections.models.EventModel;
 public class ListEventsView {
 	
 	public ListEventsView(List<EventModel> eventsList) {
+		
 		for(int i = 0; i < eventsList.size(); i++) {
 			System.out.println(eventsList.get(i));
+		}
+		if (eventsList.size() == 0) {
+			System.out.println("You have no events.\nTry to create.");
 		}
 	}
 }

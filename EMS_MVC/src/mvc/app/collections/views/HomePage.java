@@ -20,11 +20,11 @@ public class HomePage {
 	public int homePageView() {
 		System.out.println("=======================================");
 		System.out.println("Choose the action:");
-		System.out.println("3 --> Create event");
-		System.out.println("4 --> List own events");
-		System.out.println("5 --> Change event details");
+		System.out.println("3 --> Create event");			//done
+		System.out.println("4 --> List own events");		//done
+		System.out.println("5 --> Change event details");	//done
 		System.out.println("6 --> Cancel event");
-		System.out.println("7 --> Available events");
+		System.out.println("7 --> Available events");		//done
 		System.out.println("8 --> Book event");
 		System.out.println("9 --> Cancel booking");
 		System.out.println("10 --> View own Bookings");

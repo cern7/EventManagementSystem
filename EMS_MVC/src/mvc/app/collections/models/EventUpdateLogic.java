@@ -25,7 +25,7 @@ public class EventUpdateLogic {
 		String arg1 = "";
 		switch (action) {
 		case 1:
-			column = "EvenType";
+			column = "EventType";
 			arg1 = event.getEventType();
 			break;
 		case 2:
@@ -57,6 +57,7 @@ public class EventUpdateLogic {
 			db.getPrst().setInt(3, event.getOrganiser());
 
 			if (db.getPrst().executeUpdate() == 1) {
+
 				System.out.println("Event details updated");
 			} else
 				System.out.println("Something wrong try again");

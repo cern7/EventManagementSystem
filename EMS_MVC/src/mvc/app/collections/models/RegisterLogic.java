@@ -28,14 +28,14 @@ public class RegisterLogic {
 		newUser.setUsername(username);
 
 		while (!password.equals(passwordConfirm) || !validPassword(password)) {
-			System.out.println("===============================");
+			System.out.println("=======================================");
 			System.out.println("Password should contain: ");
 			System.out.println("- between 8 and 20 characters");
 			System.out.println("- at least one upper case alphabet character");
 			System.out.println("- at least one lower case alphabet character");
 			System.out.println("- at least one special character which includes !@#$%&*()-+=^");
 			System.out.println("- no white space");
-			System.out.println("===============================");
+			System.out.println("=======================================");
 			System.out.println("Invalid password, try again");
 			System.out.print("Password: ");
 			password = input.nextLine();
@@ -215,7 +215,7 @@ public class RegisterLogic {
 	}
 
 	private boolean validPassword(String password) {
-		String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$";
+		String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&-+=()])(?=\\S+$).{8,20}$";
 		// Compile regular expression to get the pattern
 		Pattern pattern = Pattern.compile(regex);
 

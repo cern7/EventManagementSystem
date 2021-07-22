@@ -26,6 +26,8 @@ public class AppController {
 	private UpdateEvent updateEventDetails;
 	private EventUpdateLogic performeEventUpdate;
 	private EventModel event;
+	private CancelEventNotice cancelNotice;
+	private CancelEvent delete;
 
 	public AppController(int i) {
 		while (i != 11) {
@@ -87,6 +89,22 @@ public class AppController {
 
 				homePage = new HomePage();
 				i = homePage.homePageView();
+				break;
+			case 6:
+				/* 6 --> Cancel event */
+				// list the events created by the user
+				listEvents = new ListEvents();
+				viewEvents = new ListEventsView(listEvents.userEvents(loginUser.getUserId()));
+				System.out.println("Please select the event ID to cancel: ");
+				int eventID = input.nextInt();
+				
+				cancelNotice = new CancelEventNotice();
+				if(cancelNotice.cancelWarning()) {
+					delete = new CancelEvent(loginUser.getUserId(), eventID);
+				}
+				homePage = new HomePage();
+				i = homePage.homePageView();
+				break;
 			case 7:
 				listEvents = new ListEvents();
 				viewEvents = new ListEventsView(listEvents.allEvents());
