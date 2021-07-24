@@ -3,6 +3,8 @@ package mvc.app.collections.models;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.sqlite.SQLiteException;
+
 //22 Jul 2021
 /**
  *
@@ -29,7 +31,8 @@ public class Bookings {
 			db.getPrst().executeUpdate();
 			System.out.println("Booking created");
 			
-		}catch (SQLException err) {
+		}
+		catch (SQLException err) {
 			// method 'printStackTrace' prints the line number where the exception is thrown
 			err.printStackTrace(System.err);
 			// method 'getMessage()' returns the details of the thrown exception

@@ -32,6 +32,7 @@ public class AppController {
 	private CancelEvent delete;
 	private Ticket ticket;
 	private Bookings booking;
+	private CancelBooking cancelBooking;
 
 	public AppController(int i) {
 		while (i != 11) {
@@ -132,19 +133,30 @@ public class AppController {
 				break;
 			case 9:
 				/* 9 --> Cancel booking */
+				listBookings = new ListBookings();
+				userBookings = new ListBookingsView(listBookings.userTicket(loginUser.getUserId()));
 
+				System.out.println("Please select the ticket No you would like to cancel: ");
+				int ticket = input.nextInt();
+				cancelBooking = new CancelBooking();
+				if (cancelBooking.updateBookingsDB(loginUser.getUserId(), ticket)) {
+					System.out.println("Ticket deleted");
+				} else
+					System.out.println("You have no ticket ticketNo:" + ticket);
+
+				homePage = new HomePage();
+				i = homePage.homePageView();
 				break;
 			case 10:
 				/* 10 --> View own Bookings */
 				listBookings = new ListBookings();
 				userBookings = new ListBookingsView(listBookings.userTicket(loginUser.getUserId()));
-				
+
 				homePage = new HomePage();
 				i = homePage.homePageView();
 				break;
-				
 			default:
-
+				break;
 			}
 		}
 
