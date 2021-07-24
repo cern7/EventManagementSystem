@@ -23,6 +23,7 @@ public class ListEventsView {
 		}
 	}
 	/* Using binary search to find the event selected by the user */
+	/* Used for booking creation */
 	public EventModel event(List<EventModel> eventsList, int eventID) {
 		int lo = 0;
 		int hi = eventsList.size() - 1;

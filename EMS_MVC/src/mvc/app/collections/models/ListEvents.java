@@ -20,6 +20,51 @@ public class ListEvents {
 
 	}
 
+	public EventModel bookedEvent(EventModel bookedEvent) {
+		try {
+			db.setCon(DriverManager.getConnection(DataBaseConnection.getDatabaseurl()));
+
+			db.setPrst(db.getCon().prepareStatement("SELECT * FROM Events WHERE EventID=?"));
+
+			db.getPrst().setInt(1, bookedEvent.getEventID());
+
+			db.setRs(db.getPrst().executeQuery());
+
+			while (db.getRs().next()) {
+				
+				bookedEvent.setEventName(db.getRs().getString(2));
+				bookedEvent.setAddressURL(db.getRs().getString(4));
+				bookedEvent.setStartDateString(db.getRs().getString(5));
+			}
+
+		} catch (SQLException err) {
+			// 'printStackTrace()' prints the line number where the exception is thrown
+			err.printStackTrace(System.err);
+			// 'getMessage()' returns the details of the thrown exception
+			System.out.println(err.getMessage());
+		} finally {
+			if (db.getRs() != null) {
+				try {
+					db.getRs().close();
+				} catch (SQLException err) {
+				}
+			}
+			if (db.getPrst() != null) {
+				try {
+					db.getPrst().close();
+				} catch (SQLException err) {
+				}
+			}
+			if (db.getCon() != null) {
+				try {
+					db.getCon().close();
+				} catch (SQLException err) {
+				}
+			}
+		}
+		return bookedEvent;
+	}
+
 	public List<EventModel> allEvents() {
 		try {
 			db.setCon(DriverManager.getConnection(DataBaseConnection.getDatabaseurl()));

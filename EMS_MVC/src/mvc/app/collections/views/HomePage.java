@@ -28,7 +28,7 @@ public class HomePage {
 		System.out.println("7 --> Available events"); 		// done
 		System.out.println("8 --> Book event");				// done
 		System.out.println("9 --> Cancel booking");
-		System.out.println("10 --> View own Bookings");		
+		System.out.println("10 --> View own Bookings");		// done
 		System.out.println("11 --> Logout");
 		System.out.println("=======================================");
 		while (choise < 3 || choise > 11) {

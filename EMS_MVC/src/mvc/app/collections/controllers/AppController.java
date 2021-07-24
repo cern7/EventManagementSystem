@@ -23,6 +23,8 @@ public class AppController {
 	private HomePage homePage;
 	private ListEvents listEvents;
 	private ListEventsView viewEvents;
+	private ListBookings listBookings;
+	private ListBookingsView userBookings;
 	private UpdateEvent updateEventDetails;
 	private EventUpdateLogic performeEventUpdate;
 	private EventModel event;
@@ -108,25 +110,39 @@ public class AppController {
 				i = homePage.homePageView();
 				break;
 			case 7:
+				/* 7 --> Available events */
 				listEvents = new ListEvents();
 				viewEvents = new ListEventsView(listEvents.allEvents());
 				homePage = new HomePage();
 				i = homePage.homePageView();
 				break;
 			case 8:
+				/* 8 --> Book event */
 				listEvents = new ListEvents();
 				viewEvents = new ListEventsView(listEvents.allEvents());
-				
+
 				System.out.println("Please select the event you would like to book\nEventID:");
 				int id = input.nextInt();
-				
+
 				ticket = new Ticket(loginUser, viewEvents.event(listEvents.allEvents(), id));
 				booking = new Bookings(ticket);
-				
+
+				homePage = new HomePage();
+				i = homePage.homePageView();
+				break;
+			case 9:
+				/* 9 --> Cancel booking */
+
+				break;
+			case 10:
+				/* 10 --> View own Bookings */
+				listBookings = new ListBookings();
+				userBookings = new ListBookingsView(listBookings.userTicket(loginUser.getUserId()));
 				
 				homePage = new HomePage();
 				i = homePage.homePageView();
 				break;
+				
 			default:
 
 			}
