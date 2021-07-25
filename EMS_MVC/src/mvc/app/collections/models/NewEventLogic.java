@@ -12,22 +12,13 @@ import java.util.Scanner;
  */
 public class NewEventLogic {
 	private DataBaseConnection db = new DataBaseConnection();
-	
+
 	private EventModel newEvent;
 
 	public NewEventLogic(String eventName, String eventType, String addressURL, String description, String startDate,
 			String endDate, int placeLimit, int organiser) {
 		newEvent = new EventModel(eventName, eventType, addressURL, description, startDate, endDate, placeLimit,
 				organiser, 0);
-//		newEvent.setEventName(eventName);
-//		newEvent.setEventType(eventType);
-//		newEvent.setAddressURL(addressURL);
-//		newEvent.setDescription(description);
-//		newEvent.setStartDateString(starDate);
-//		newEvent.setEndDateString(endDate);
-//		newEvent.setPlaceLimit(placeLimit);
-//		newEvent.setOrganiser(organiser);
-
 		dbCreateEvent();
 	}
 

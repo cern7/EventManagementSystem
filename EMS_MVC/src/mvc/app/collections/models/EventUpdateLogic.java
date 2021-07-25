@@ -47,7 +47,7 @@ public class EventUpdateLogic {
 		default:
 			break;
 		}
-		String prepareStm = "UPDATE Events SET " + column + "=? WHERE EventID=? and Organiser=?; ";
+		String prepareStm = "UPDATE Events SET " + column + "=? WHERE EventID=? AND Organiser=?; ";
 
 		try {
 			db.setCon(DriverManager.getConnection(db.getDatabaseurl()));

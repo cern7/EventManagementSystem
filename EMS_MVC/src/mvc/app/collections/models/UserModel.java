@@ -113,8 +113,8 @@ public class UserModel {
 		// https://www.veracode.com/blog/research/cryptographically-secure-pseudo-random-number-generator-csprng
 		byte[] salt = new byte[64];
 		try {
-			SecureRandom nativePrngNon = SecureRandom.getInstanceStrong();
-			nativePrngNon.nextBytes(salt);
+			SecureRandom secRan = SecureRandom.getInstanceStrong();
+			secRan.nextBytes(salt);
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

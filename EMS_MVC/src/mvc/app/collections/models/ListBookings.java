@@ -39,7 +39,7 @@ public class ListBookings {
 			while (db.getRs().next()) {
 				ticket = new Ticket();
 				event = new EventModel();
-				// gets the ticket object from the db
+				// gets the ticket object from the database
 				ticket.setTicketNo(db.getRs().getInt(1));
 				// to set the ticket property (event)
 				// first initialising the event object
@@ -51,7 +51,6 @@ public class ListBookings {
 
 				// add ticket to List ticketList
 				ticketList.add(ticket);
-
 			}
 		} catch (SQLException err) {
 			// 'printStackTrace()' prints the line number where the exception is thrown

@@ -5,18 +5,16 @@ import java.util.Scanner;
 //21 Jul 2021
 /**
  *
- *@author cen7
+ * @author cen7
  *
  */
-public class UpdateEvent extends CreateEvent{
+public class UpdateEvent extends CreateEvent {
 	private Scanner input = new Scanner(System.in);
 	private int eventID;
-	
+
 	public UpdateEvent() {
-		
-		
-		
 	}
+
 	public int updateEventUI() {
 		System.out.println("=======================================");
 		System.out.println("Event update");
@@ -28,7 +26,7 @@ public class UpdateEvent extends CreateEvent{
 		System.out.println("3. Change event address\n4. Change event name");
 		System.out.println("5. Change event description\n6. Go back");
 		int c = input.nextInt();
-		switch(c) {
+		switch (c) {
 		case 1:
 			System.out.println("New event type: online / physical ");
 			input.nextLine();
@@ -62,12 +60,15 @@ public class UpdateEvent extends CreateEvent{
 		}
 		return c;
 	}
+
 	public int getEventID() {
 		return eventID;
 	}
+
 	public void setEventID(int eventID) {
 		this.eventID = eventID;
 	}
+
 	public int getOrganiser() {
 		return organiser;
 	}

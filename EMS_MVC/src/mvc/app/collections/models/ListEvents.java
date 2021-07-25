@@ -17,7 +17,6 @@ public class ListEvents {
 	private List<EventModel> eventsList = new ArrayList<EventModel>();
 
 	public ListEvents() {
-
 	}
 
 	public EventModel bookedEvent(EventModel bookedEvent) {
@@ -31,7 +30,7 @@ public class ListEvents {
 			db.setRs(db.getPrst().executeQuery());
 
 			while (db.getRs().next()) {
-				
+
 				bookedEvent.setEventName(db.getRs().getString(2));
 				bookedEvent.setAddressURL(db.getRs().getString(4));
 				bookedEvent.setStartDateString(db.getRs().getString(5));

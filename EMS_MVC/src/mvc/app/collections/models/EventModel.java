@@ -126,13 +126,4 @@ public class EventModel {
 				+ ", endDateString=" + endDateString + ", placeLimit=" + placeLimit + "]";
 	}
 
-//	private void dateParse(String date) {
-//		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-//		try {
-//			startDate = dateFormat.parse(date);
-//		} catch (ParseException e) {
-//			e.printStackTrace(System.err);
-//			System.out.println(e.getMessage());
-//		}
-//	}
 }
