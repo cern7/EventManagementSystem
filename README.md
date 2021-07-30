@@ -132,28 +132,28 @@ Finally the system generates two hashes from these salts. The hash generation me
 
 ```
 private String hashGenerate(byte[] salt, String password) {
-        // create MessageDigest instance of SHA-256
-        String saltString = "";
+    // create MessageDigest instance of SHA-256
+    String saltString = "";
     String hash = "";
-        for (int i = 0; i < salt.length; i++) {
-                saltString += salt[i];
+    for (int i = 0; i < salt.length; i++) {
+        saltString += salt[i];
+    }
+    try {
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+        messageDigest.update(salt);
+        byte[] bytes = messageDigest.digest((password + saltString).getBytes());
+        // convert bytes[] to hexadecimal format
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < bytes.length; i++) {
+                stringBuilder.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
         }
-        try {
-                MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-                messageDigest.update(salt);
-                byte[] bytes = messageDigest.digest((password + saltString).getBytes());
-                // convert bytes[] to hexadecimal format
-                StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 0; i < bytes.length; i++) {
-                        stringBuilder.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-                }
-                hash = stringBuilder.toString();
+        hash = stringBuilder.toString();
         } catch (NoSuchAlgorithmException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
         }
-        return hash;
-        }
+   return hash;
+}
 ```
 
 **User Validation**
